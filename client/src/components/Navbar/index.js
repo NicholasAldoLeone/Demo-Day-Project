@@ -16,6 +16,7 @@ class Navbar extends React.Component {
                 style={{ width: 256 }}
                 defaultSelectedKeys={['0']}
                 mode="inline"
+                {...this.props}
             >
                 <SubMenu
                     key="sub1"

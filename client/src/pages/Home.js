@@ -1,12 +1,11 @@
 import React from "react";
 import API from "../util/API";
 import ViewButton from "../components/ViewButton";
-import { Link } from "react-router-dom";
 import { Col, Row } from "antd";
 import { Card } from "antd";
 import { Layout } from 'antd';
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Footer, Content } = Layout;
 
 class Homepage extends React.Component {
     state = {
@@ -36,13 +35,13 @@ class Homepage extends React.Component {
         return (
             <div>
                 <Row>
-                    <Col span="22">
+                    <Col span={22}>
                         <Layout>
                             <Content>
-                                <Col span="24">
+                                <Col span={24}>
                                     {this.state.list.map(stateData => {
                                         return <div>
-                                            <Col span="8" style={{ margin: 5 }}>
+                                            <Col span={8} style={{ margin: 5 }}>
                                                 <Card title={stateData.title}>
                                                     <p>Author: {stateData.author}</p>
                                                     <ViewButton value = {stateData._id} onClick = {this.changeUrl}></ViewButton>
