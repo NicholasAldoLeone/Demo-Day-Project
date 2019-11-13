@@ -41,7 +41,7 @@ class Homepage extends React.Component {
                                 <Col span={24}>
                                     {this.state.list.map(stateData => {
                                         return <div>
-                                            <Col span={8} style={{ margin: 5 }}>
+                                            <Col span={7} style={{ margin: 20 }}>
                                                 <Card title={stateData.title}>
                                                     <p>Author: {stateData.author}</p>
                                                     <ViewButton value = {stateData._id} onClick = {this.changeUrl}></ViewButton>

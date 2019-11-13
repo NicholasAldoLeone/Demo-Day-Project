@@ -34,4 +34,22 @@ router.post("/create", function (req, res) {
     });
 });
 
+router.post("/register", function(req, res){
+    console.log(req.body);
+    db.User.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+    }).then(function(data) {
+        res.json(data);
+    });
+});
+
+router.post("/login", function(req, res){
+    console.log("reg Info: ", req.body);
+    db.User.findOne(req.body).then(function(data){
+        res.json(data);
+    });
+});
+
 module.exports = router;

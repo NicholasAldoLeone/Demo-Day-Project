@@ -36,6 +36,12 @@ class Navbar extends React.Component {
                     <Menu.Item key="/create">Create
                     <Link to = "/create"></Link>
                     </Menu.Item>
+                    <Menu.Item key = "/login">Login
+                    <Link to = "/login"></Link>
+                    </Menu.Item>
+                    <Menu.Item key = "/register">Register
+                    <Link to = "/register"></Link>
+                    </Menu.Item>
                 </SubMenu>
             </Menu>
         )

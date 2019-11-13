@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const routes = require("./routes");
+const session = require("express-session");
+const passport = require("passport");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -11,9 +13,20 @@ app.use(express.json());
 
 app.use(logger("dev"));
 
-// if(process.env.NODE_ENV === "production") {
-//     app.use(express.static("client/build"));
-// };
+if(process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+};
+
+// Express Session
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes);
 
